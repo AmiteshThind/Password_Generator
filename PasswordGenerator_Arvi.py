@@ -1,30 +1,17 @@
 import random
 import string
 
-# Password length must be between 10 and 24
-
-
+password = ""
 specialCharacters = "-|@.,?/!~#%^&*(){}[]\=*"
 specialCharacters = list(specialCharacters)
 sizeOfSpecialCharacters = len(specialCharacters)
 
 passwordLength = random.randint(11, 23)
 
-#print("passwordLength :" + str(passwordLength))
-
-numLowercaseCharacters = random.randint(1,
-                                        passwordLength - 3)  # subtract 3 because atleast 1 must be lower , atleast 1 must be special atleast 1 must be number
-
+numLowercaseCharacters = random.randint(1,passwordLength - 3) 
 numUppercaseCharacters = (random.randint(1, (passwordLength - numLowercaseCharacters) - 2))
 numSpecialCharacters = random.randint(1, (passwordLength - (numUppercaseCharacters + numLowercaseCharacters + 1)))
 numRandNumber = passwordLength - (numLowercaseCharacters + numUppercaseCharacters + numSpecialCharacters)
-
-#print ("lowercaseCharacters:" + str(numLowercaseCharacters))
-#print ("uppercaseCharacters:" + str(numUppercaseCharacters))
-#print("numSpecialCharacters:" + str(numSpecialCharacters))
-#print("numRandNumber:" + str(numRandNumber))
-
-password = ""
 
 # generate ranom characters and append to string
 
@@ -49,9 +36,4 @@ random.shuffle(passwordList)
 
 password = "".join(passwordList)
 
-
-
 print ("Password:" + password)
-
-# Must contains at least 1 number
-# Must contains at least one of these special characters -|@.,?/!~#%^&*(){}[]\=*
